@@ -1,6 +1,6 @@
 package jmu.ss.entity;
 
-public class diary {
+public class Diary {
     private int diaryID; //日记ID
     private int courseID;//课程ID
     private int traineeID;//学员ID

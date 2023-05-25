@@ -1,6 +1,6 @@
 package jmu.ss.entity;
 
-public class orders {
+public class Orders {
     private int orderID;//订单ID
     private int traineeID;//学员ID
     private int coachID;//教练ID

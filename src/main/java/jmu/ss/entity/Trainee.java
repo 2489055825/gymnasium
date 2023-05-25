@@ -1,6 +1,6 @@
 package jmu.ss.entity;
 
-public class trainee {
+public class Trainee {
     private int traineeID; //学员ID
     private String name; //名字
     private String sex; //性别

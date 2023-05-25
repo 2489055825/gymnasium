@@ -1,6 +1,6 @@
 package jmu.ss.entity;
 
-public class users {
+public class Users {
     private int userID; //用户ID
     private String name; //用户名
     private String account; //账号/手机号

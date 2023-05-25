@@ -1,6 +1,6 @@
 package jmu.ss.entity;
 
-public class course {
+public class Course {
     private int courseID; //课程ID
     private String courseName; //课程名称
     private int coachID; //教练ID

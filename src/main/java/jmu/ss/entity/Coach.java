@@ -1,6 +1,6 @@
 package jmu.ss.entity;
 
-public class coach {
+public class Coach {
     private int coachID; //教练ID
     private String name;//姓名
     private String sex;//性别
