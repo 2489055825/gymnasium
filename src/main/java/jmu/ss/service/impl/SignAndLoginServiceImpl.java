@@ -20,13 +20,12 @@ public class SignAndLoginServiceImpl implements SignAndLoginService {
     }
 
     @Override
-    public boolean login(String account, String password) {
-        boolean flag = false;
+    public Users login(String account, String password) {
         Users users = usersDAO.queryByUserAccount(account);
-        if(password.equals(users)){
-            flag = true;
+        if(!password.equals(users.getPassword())){
+            users = null;
         }
-        return flag;
+        return users;
     }
 
 

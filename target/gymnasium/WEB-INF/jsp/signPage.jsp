@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            <label for="identity">身份:</label>
+            <label for="identity">身份:</label> <!--要保证身份下拉列表的值是coach或者trainee,和触发器有关-->
             <input type="text" id="identity" name="identity" required>
         </div>
         <div class="form-group">

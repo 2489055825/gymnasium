@@ -18,5 +18,5 @@ public interface SignAndLoginService {
      * @param password
      * @return
      * */
-    public boolean login(String account, String password);
+    public Users login(String account, String password);
 }
