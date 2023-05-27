@@ -11,8 +11,8 @@ import java.util.List;
 public interface UsersDAO {
 
     //插入一个用户
-    @Insert("INSERT INTO users(userID, name, account, password, identity)\n" +
-            "VALUES (#{userID}, #{name}, #{account}, #{password}, #{identity})")
+    @Insert("INSERT INTO users(name, account, password, identity)\n" +
+            "VALUES (#{name}, #{account}, #{password}, #{identity})")
     public boolean insert(Users users);
 
     //删除一个用户

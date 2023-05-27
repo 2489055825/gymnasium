@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 @Controller
 @RequestMapping("/signAndLogin")
@@ -19,12 +18,13 @@ public class SignAndLoginController {
     @Autowired
     private SignAndLoginService signAndLoginService;
 
-    @RequestMapping(value = "/sign", method = RequestMethod.GET)
+    @RequestMapping(value = "/sign", method = RequestMethod.POST)
     public String sign(@RequestParam("name") String name,
                        @RequestParam("account") String account,
                        @RequestParam("password") String password,
                        @RequestParam("identity") String identity,
                        Model model) {
+
         if(name==null||account==null||password==null||identity==null){
             return "signPage";
         }

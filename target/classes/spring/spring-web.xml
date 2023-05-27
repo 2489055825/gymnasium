@@ -31,5 +31,5 @@
     </bean>
 
     <!-- 4.扫描web相关的bean -->
-    <context:component-scan base-package="jmu.ss.dao" />
+    <context:component-scan base-package="jmu.ss.web" />
 </beans>

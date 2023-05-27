@@ -14,7 +14,7 @@
 <body>
 <div class="form-container">
     <h2>用户注册</h2>
-    <form action="signAndLogin/sign" method="post" >
+    <form action="signAndLogin/sign" method="post">
         <div class="form-group">
             <label for="name">用户名:</label>
             <input type="text" id="name" name="name" required>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            <label for="identity">身份:</label>
+            <label for="identity">密码:</label>
             <input type="text" id="identity" name="identity" required>
         </div>
         <div class="form-group">
