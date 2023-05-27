@@ -37,6 +37,8 @@ public interface CourseDAO {
 
 
     // 根据课程ID查询所有的学员,返回列表(连接)
+    @Select("select * from trainee " +
+            "where trainee.traineeID in (select orders.traineeID from orders where orders.courseID=#{courseID})\n")
     public List<Trainee> queryTraineeByCourseID(int courseID);
 
 }
