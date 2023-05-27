@@ -60,11 +60,11 @@ public class SignAndLoginController {
             path = "loginResult";
         }else{
             if(users.getIdentity().equals("admin")){
-                path = "adminPage-home";
+                path = "redirect:/adminPage-home.jsp";
             } else if (users.getIdentity().equals("coach")) {
-                path = "coachPage-home";
+                path = "redirect:/coachPage-home.jsp";
             } else if (users.getIdentity().equals("trainee")) {
-                path = "traineePage-home";
+                path = "redirect:/traineePage-home.jsp";
             }
         }
         return path;
