@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/signAndLogin")
 public class SignAndLoginController {
+    public static int USERSID;
+
 
     @Autowired
     private SignAndLoginService signAndLoginService;
@@ -59,12 +61,13 @@ public class SignAndLoginController {
         if(users == null){
             path = "loginResult";
         }else{
+            this.USERSID = users.getUserID();
             if(users.getIdentity().equals("admin")){
                 path = "redirect:/adminPage-home.jsp";
             } else if (users.getIdentity().equals("coach")) {
                 path = "redirect:/coachPage-home.jsp";
             } else if (users.getIdentity().equals("trainee")) {
-                path = "redirect:/traineePage-home.jsp";
+                path = "redirect:/traineeFunction/personInformation";
             }
         }
         return path;

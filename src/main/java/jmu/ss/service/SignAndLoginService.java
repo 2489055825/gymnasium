@@ -9,7 +9,7 @@ public interface SignAndLoginService {
      * @param users
      * @return
      * */
-    public boolean sign(Users users);
+    boolean sign(Users users);
 
     /**
      * 验证登录
@@ -18,5 +18,5 @@ public interface SignAndLoginService {
      * @param password
      * @return
      * */
-    public Users login(String account, String password);
+    Users login(String account, String password);
 }
