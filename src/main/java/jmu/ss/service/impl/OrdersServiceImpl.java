@@ -38,4 +38,10 @@ public class OrdersServiceImpl implements OrdersService {
         return flag;
     }
 
+    @Override
+    public boolean deleteOrders(int ordersID) {
+        boolean flag = ordersDAO.delete(ordersID);
+        return flag;
+    }
+
 }

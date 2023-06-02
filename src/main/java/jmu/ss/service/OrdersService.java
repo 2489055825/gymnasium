@@ -8,6 +8,6 @@ public interface OrdersService {
     public List<Orders> getAllOrders();
     public Orders getOrderByOrdersID(int orderID);
     public boolean insertOrders(Orders orders);
-
     public boolean insertOrdersCommentsByOrdersID(Orders orders);
+    public boolean deleteOrders(int ordersID);
 }

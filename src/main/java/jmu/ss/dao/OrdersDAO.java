@@ -1,6 +1,7 @@
 package jmu.ss.dao;
 
 import jmu.ss.entity.Orders;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -26,4 +27,9 @@ public interface OrdersDAO {
             "set traineeID=#{traineeID},coachID=#{coachID},courseID=#{courseID},orderRank=#{orderRank},orderDetail=#{orderDetail}\n" +
             "where orderID=#{orderID}")
     public boolean update(Orders orders);
+
+    @Delete("DELETE\n" +
+            "FROM orders\n" +
+            "WHERE orderID = #{orderID}")
+    public boolean delete(int orderID);
 }

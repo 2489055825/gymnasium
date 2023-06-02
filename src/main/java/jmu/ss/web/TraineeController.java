@@ -227,4 +227,36 @@ public class TraineeController {
 
         return "redirect:/traineeFunction/courseBooking";
     }
+
+    @RequestMapping(value = "/myOrders", method = RequestMethod.GET)
+    public String myOrders(Model model){
+
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        List<Orders> ordersList = ordersService.getAllOrders();
+        model.addAttribute("ordersList", ordersList);
+
+        return "traineePage-myOrders";
+    }
+
+    @RequestMapping(value = "/deleteOrders", method = RequestMethod.GET)
+    public String deleteOrders(
+            @RequestParam("ordersID") int ordersID,
+            Model model){
+
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Boolean flag = ordersService.deleteOrders(ordersID);
+        if(!flag){
+            return "traineePage-deleteOrdersFailure";
+        }
+
+        return "redirect:/traineeFunction/myOrders";
+    }
 }
