@@ -14,7 +14,7 @@ public interface CoachDAO {
 
     @Update("update coach\n" +
             "set name=#{name},sex=#{sex},age=#{age},personIntroduction=#{personIntroduction}\n" +
-            "where coachID=#{coach}")
+            "where coachID=#{coachID}")
     public boolean update(Coach coach);
 
     @Insert("INSERT INTO coach(coachID, name, sex, age, personIntroduction)\n" +

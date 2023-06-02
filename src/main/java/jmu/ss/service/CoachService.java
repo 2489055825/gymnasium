@@ -12,4 +12,8 @@ public interface CoachService {
      * @return 教练列表
      */
     public List<Coach> getAllCoach();
+
+    public Coach getCoachByCoachID(int coachID);
+
+    public boolean updateCoach(Coach coach);
 }

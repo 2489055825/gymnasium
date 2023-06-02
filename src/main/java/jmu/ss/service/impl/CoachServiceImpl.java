@@ -18,4 +18,16 @@ public class CoachServiceImpl implements CoachService {
         List<Coach> coachList = coachDAO.queryAll();
         return coachList;
     }
+
+    @Override
+    public Coach getCoachByCoachID(int coachID) {
+        Coach coach = coachDAO.queryByCoachID(coachID);
+        return coach;
+    }
+
+    @Override
+    public boolean updateCoach(Coach coach) {
+        boolean flag = coachDAO.update(coach);
+        return flag;
+    }
 }

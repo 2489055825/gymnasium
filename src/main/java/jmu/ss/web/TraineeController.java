@@ -38,7 +38,7 @@ public class TraineeController {
         return "traineePage-home";
     }
 
-    @RequestMapping(value = "/updateTrainee", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateCoach", method = RequestMethod.POST)
     public String updateTrainee(
             @RequestParam("name") String name,
             @RequestParam("sex") String sex,
@@ -50,17 +50,17 @@ public class TraineeController {
             Model model){
             double BMI = weight / (height * height); //计算BMI
 
-            //组装学员对象
-            Trainee trainee = new Trainee();
-            trainee.setTraineeID(SignAndLoginController.USERSID);
-            trainee.setName(name);
-            trainee.setSex(sex);
-            trainee.setAge(age);
-            trainee.setWeight(weight);
-            trainee.setHeight(height);
-            trainee.setBMI(BMI);
-            trainee.setPurpose(purpose);
-            trainee.setPersonIntroduction(personIntroduction);
+        //组装学员对象
+        Trainee trainee = new Trainee();
+        trainee.setTraineeID(SignAndLoginController.USERSID);
+        trainee.setName(name);
+        trainee.setSex(sex);
+        trainee.setAge(age);
+        trainee.setWeight(weight);
+        trainee.setHeight(height);
+        trainee.setBMI(BMI);
+        trainee.setPurpose(purpose);
+        trainee.setPersonIntroduction(personIntroduction);
 
             boolean flag = traineeService.updateTrainee(trainee);
             if(!flag){
