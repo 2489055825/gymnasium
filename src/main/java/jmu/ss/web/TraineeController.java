@@ -1,6 +1,7 @@
 package jmu.ss.web;
 
 import jmu.ss.dao.TraineeDAO;
+import jmu.ss.entity.Diary;
 import jmu.ss.entity.Trainee;
 import jmu.ss.service.TraineeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/traineeFunction")
@@ -56,8 +59,17 @@ public class TraineeController {
                 return "traineePage-updateInformationFailure"; //转到失败页面
             }
             return "redirect:/traineeFunction/personInformation"; //转到个人信息页面(重新查询)
-
     }
 
+    @RequestMapping(value = "/myDiary", method = RequestMethod.GET)
+    public String myDiary(Model model){
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+        List<Diary> diaryList = traineeService.getDiaryByTraineeID(traineeID);
+        model.addAttribute("diaryList", diaryList);
+        return "traineePage-myDiary";
+    }
 
 }

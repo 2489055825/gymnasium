@@ -1,6 +1,9 @@
 package jmu.ss.service;
 
+import jmu.ss.entity.Diary;
 import jmu.ss.entity.Trainee;
+
+import java.util.List;
 
 public interface TraineeService {
 
@@ -20,5 +23,12 @@ public interface TraineeService {
      */
     boolean updateTrainee(Trainee trainee);
 
+    /**
+     * 根据学员ID查找学员日记信息
+     *
+     * @param traineeID 学员ID
+     * @return 日记列表
+     */
+    public List<Diary> getDiaryByTraineeID(int traineeID);
 
 }

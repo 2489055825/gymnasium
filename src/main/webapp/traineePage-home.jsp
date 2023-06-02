@@ -20,6 +20,7 @@
 <%-- String trainee = request.getParameter("trainee");--%>
 <%--%>--%>
 <%--<h6> <%=trainee%></h6>--%>
+<a href="myDiary"><button>访问我的日记界面</button></a>
 <a href="<c:url value="/traineePage-updateInformation.jsp"/>"><button>修改信息</button></a>
 </body>
 </html>
