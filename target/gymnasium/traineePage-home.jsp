@@ -1,4 +1,4 @@
-<%--
+<%@ page import="jmu.ss.entity.Trainee" %><%--
   Created by IntelliJ IDEA.
   User: liusu
   Date: 2023/5/27
@@ -16,6 +16,10 @@
 <h6>${trainee.name}</h6>
 <h6>${trainee.age}</h6><!--使用这种方式进行访问-->
 <h6>${trainee.toString()}</h6>
-
+<%--<%--%>
+<%-- String trainee = request.getParameter("trainee");--%>
+<%--%>--%>
+<%--<h6> <%=trainee%></h6>--%>
+<a href="<c:url value="/traineePage-updateInformation.jsp"/>"><button>修改信息</button></a>
 </body>
 </html>

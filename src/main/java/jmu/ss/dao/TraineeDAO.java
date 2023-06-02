@@ -12,7 +12,7 @@ public interface TraineeDAO {
 
     //在数据库中修改个人信息(SET)
     @Update("update trainee\n" +
-            "set traineeID=#{traineeID}, name=#{name},sex=#{sex},age=#{age},weight=#{weight}," +
+            "set name=#{name},sex=#{sex},age=#{age},weight=#{weight}," +
             "height=#{height},BMI=#{BMI},purpose=#{purpose},personIntroduction=#{personIntroduction}\n" +
             "where traineeID=#{traineeID}")
     public boolean update(Trainee trainee);

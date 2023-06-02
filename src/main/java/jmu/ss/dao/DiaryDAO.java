@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface DiaryDAO {
     //根据学员ID查询到所有他的健身日记, 按照升序进行排列
-    @Select("select * from diary where traineeID=#{traineeID}")
+    @Select("select * from diary where traineeID=#{traineeID} order by diaryDate asc")
     public List<Diary> queryAll(int traineeID);
 
 
