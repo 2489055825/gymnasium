@@ -35,4 +35,6 @@ public class TraineeServiceImpl implements TraineeService {
         List<Diary> diaryList = diaryDAO.queryAll(traineeID);
         return diaryList;
     }
+
+
 }

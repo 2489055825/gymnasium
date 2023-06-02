@@ -31,4 +31,6 @@ public interface TraineeService {
      */
     public List<Diary> getDiaryByTraineeID(int traineeID);
 
+
+
 }

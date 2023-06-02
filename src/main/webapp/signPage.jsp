@@ -13,6 +13,7 @@
 </head>
 <body>
 <body>
+
 <div class="form-container">
     <h2>用户注册</h2>
     <form action="signAndLogin/sign" method="post" >
@@ -38,6 +39,7 @@
         </div>
     </form>
 </div>
+
 </body>
 </body>
 </html>
