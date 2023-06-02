@@ -17,9 +17,10 @@
     <h6>${diary.toString()}</h6>
 </c:forEach>
 <a href="deleteDiary?diaryID=1"><button>删除id为1的日记</button></a>
+<a href="updateDiary?diaryID=2"><button>修改id为2的日记</button></a>
 <c:forEach var="course" items="${courseList}">
     <h6>${course.toString()}</h6>
 </c:forEach>
-<a href="insertDiaryPage"><button>访问修改日记界面</button></a>
+<a href="insertDiaryPage"><button>访问新增日记界面</button></a>
 </body>
 </html>

@@ -1,12 +1,7 @@
 package jmu.ss.web;
 
-import jmu.ss.entity.Course;
-import jmu.ss.entity.Diary;
-import jmu.ss.entity.Trainee;
-import jmu.ss.service.CoachService;
-import jmu.ss.service.CourseService;
-import jmu.ss.service.DiaryService;
-import jmu.ss.service.TraineeService;
+import jmu.ss.entity.*;
+import jmu.ss.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +24,8 @@ public class TraineeController {
     private CourseService courseService;
     @Autowired
     private DiaryService diaryService;
+    @Autowired
+    private OrdersService ordersService;
 
     @RequestMapping(value = "/personInformation", method = RequestMethod.GET)
     public String personInformation(Model model){
@@ -151,4 +148,83 @@ public class TraineeController {
         return "redirect:/traineeFunction/myDiary";
     }
 
+
+    @RequestMapping(value = "/myComments", method = RequestMethod.GET)
+    public String myComments(Model model){
+
+        //@RequestParam("coach") int coachID,
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        List<Orders> ordersList = ordersService.getAllOrders();
+        model.addAttribute("ordersList", ordersList);
+
+        return "traineePage-comments";
+    }
+
+    @RequestMapping(value = "/insertComments", method = RequestMethod.POST)
+    public String insertComments(
+            @RequestParam("orderID") int orderID,
+            @RequestParam("orderRank") int orderRank,
+            @RequestParam("orderDetail") String orderDetail,
+            Model model){
+
+        //@RequestParam("coach") int coachID,
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Orders orders = ordersService.getOrderByOrdersID(orderID);
+        orders.setOrderRank(orderRank);
+        orders.setOrderDetail(orderDetail);
+
+        Boolean flag = ordersService.insertOrdersCommentsByOrdersID(orders);
+        if(!flag){
+            return "traineePage-insertOrdersCommentsFailure";
+        }
+
+        return "redirect:/traineeFunction/myComments";
+    }
+
+    @RequestMapping(value = "/courseBooking", method = RequestMethod.GET)
+    public String courseBooking(Model model){
+
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        List<Course> courseList = courseService.getAllCourse();
+        model.addAttribute("courseList", courseList);
+
+        return "traineePage-courseBooking";
+    }
+
+    @RequestMapping(value = "/insertOrders", method = RequestMethod.GET)
+    public String insertOrders(
+            @RequestParam("courseID") int courseID,
+            Model model){
+
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Course course = courseService.getCourseByCourseID(courseID);
+        Orders orders = new Orders();
+        orders.setTraineeID(SignAndLoginController.USERSID);
+        orders.setCoachID(course.getCoachID());
+        orders.setCourseID(courseID);
+
+
+        Boolean flag = ordersService.insertOrders(orders);
+        if(!flag){
+            return "traineePage-insertOrdersCommentsFailure";
+        }
+
+        return "redirect:/traineeFunction/courseBooking";
+    }
 }

@@ -14,14 +14,6 @@
 <body>
 
 <form action="insertDiary" method="POST">
-<%--    <!-- 下拉列表1：教练列表 -->--%>
-<%--    <label for="coachSelect">选择教练:</label>--%>
-<%--    <select id="coachSelect" name="selectedCoach">--%>
-<%--        <c:forEach var="coach" items="${coachList}">--%>
-<%--            <option value="${coach.coachID}">${coach.name}</option>--%>
-<%--        </c:forEach>--%>
-<%--    </select>--%>
-
     <!-- 下拉列表2：课程列表 -->
     <label for="courseSelect">选择课程:</label>
     <select id="courseSelect" name="selectedCourse">

@@ -27,4 +27,5 @@ public interface CourseService {
     public List<Course> getCourseByDiaryList(List<Diary> diaryList);
 
 
+
 }
