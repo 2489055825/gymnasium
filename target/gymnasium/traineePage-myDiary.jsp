@@ -16,7 +16,7 @@
     <!-- 在这里使用diary对象的属性进行展示 -->
     <h6>${diary.toString()}</h6>
 </c:forEach>
-
+<a href="deleteDiary?diaryID=1"><button>删除id为1的日记</button></a>
 <c:forEach var="course" items="${courseList}">
     <h6>${course.toString()}</h6>
 </c:forEach>

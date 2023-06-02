@@ -16,4 +16,10 @@ public class DiaryServiceImpl implements DiaryService {
         boolean flag = diaryDAO.insert(diary);
         return flag;
     }
+
+    @Override
+    public boolean deleteDiary(int diaryID) {
+        boolean flag = diaryDAO.delete(diaryID);
+        return flag;
+    }
 }

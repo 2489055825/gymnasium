@@ -13,6 +13,12 @@ public interface DiaryService {
      */
     public boolean insertDiary(Diary diary);
 
+    /**
+     * 删除一个日记
+     * @param diaryID 日记ID
+     * @return 返回flag记录是否成功插入
+     */
+    public boolean deleteDiary(int diaryID);
 
 }
 

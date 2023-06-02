@@ -130,4 +130,25 @@ public class TraineeController {
 
         return "redirect:/traineeFunction/myDiary";
     }
+
+
+    @RequestMapping(value = "/deleteDiary", method = RequestMethod.GET)
+    public String deleteDiary(
+            @RequestParam("diaryID") int courseID,
+            Model model){
+
+        //@RequestParam("coach") int coachID,
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        boolean flag = diaryService.deleteDiary(courseID);
+        if(!flag){
+            return "traineePage-insertDiaryFailure";
+        }
+
+        return "redirect:/traineeFunction/myDiary";
+    }
+
 }
