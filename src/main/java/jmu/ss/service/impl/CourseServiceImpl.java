@@ -41,4 +41,18 @@ public class CourseServiceImpl implements CourseService {
         }
         return courseList;
     }
+
+    @Override
+    public List<Course> getCourseByCoachID(int coachID) {
+        List<Course> courseList = courseDAO.queryByCoachID(coachID);
+        return courseList;
+    }
+
+    @Override
+    public boolean insertCourse(Course course) {
+        boolean flag = courseDAO.insert(course);
+        return flag;
+    }
+
+
 }

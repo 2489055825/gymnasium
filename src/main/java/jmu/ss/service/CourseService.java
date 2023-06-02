@@ -26,6 +26,9 @@ public interface CourseService {
      */
     public List<Course> getCourseByDiaryList(List<Diary> diaryList);
 
+    public List<Course> getCourseByCoachID(int coachID);
+
+    public boolean insertCourse(Course course);
 
 
 }

@@ -15,10 +15,8 @@
 这是教练首页
 <h6>${coach.toString()}</h6>
 
-<a href="myDiary"><button>访问我的日记界面</button></a>
-<a href="myComments"><button>访问我的点评界面</button></a>
-<a href="courseBooking"><button>访问课程预订界面</button></a>
-<a href="myOrders"><button>访问我的订单界面</button></a>
+<a href="myCourse"><button>访问健身课程界面</button></a>
+<a href="myTraineeDiary"><button>访问查看学员健身日记界面</button></a>
 <a href="<c:url value="/coachPage-updateInformation.jsp"/>"><button>修改信息</button></a>
 </body>
 </html>
