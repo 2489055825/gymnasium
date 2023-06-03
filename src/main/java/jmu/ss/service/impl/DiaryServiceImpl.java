@@ -49,5 +49,11 @@ public class DiaryServiceImpl implements DiaryService {
         return mergedDiaryList;
     }
 
+    @Override
+    public List<Diary> getAllDiary() {
+        List<Diary> diaryList = diaryDAO.queryAllByNone();
+        return diaryList;
+    }
+
 
 }

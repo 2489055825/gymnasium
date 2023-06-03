@@ -12,6 +12,9 @@ public interface DiaryDAO {
     @Select("select * from diary where traineeID=#{traineeID} order by diaryDate asc")
     public List<Diary> queryAll(int traineeID);
 
+    @Select("select * from diary")
+    public List<Diary> queryAllByNone();
+
     @Select("select * from diary where courseID=#{courseID} order by diaryDate asc")
     public List<Diary> queryByCourseID(int courseID);
 

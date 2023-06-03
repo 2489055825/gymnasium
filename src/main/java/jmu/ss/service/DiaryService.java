@@ -21,6 +21,7 @@ public interface DiaryService {
     public boolean deleteDiary(int diaryID);
 
     public List<Diary> getDiaryByCoachID(int coachID);
+    public List<Diary> getAllDiary();
 }
 
 

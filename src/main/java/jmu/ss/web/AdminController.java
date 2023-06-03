@@ -1,6 +1,7 @@
 package jmu.ss.web;
 
 import jmu.ss.entity.Coach;
+import jmu.ss.entity.Diary;
 import jmu.ss.entity.Orders;
 import jmu.ss.entity.Trainee;
 import jmu.ss.service.*;
@@ -112,5 +113,34 @@ public class AdminController {
         }
 
         return "redirect:/adminFunction/manageOrders";
+    }
+
+    @RequestMapping(value = "/manageTraineeDiary", method = RequestMethod.GET)
+    public String manageTraineeDiary(Model model){
+        Integer adminID = SignAndLoginController.USERSID;
+        if(adminID == null){
+            return "redirect:/loginPage.jsp";
+        }
+        List<Diary> diaryList = diaryService.getAllDiary();
+        model.addAttribute("diaryList", diaryList); //使用重定向后model传不过去
+        return "adminPage-manageTraineeDiary";
+    }
+
+    @RequestMapping(value = "/deleteDiary", method = RequestMethod.GET)
+    public String deleteDiary(
+            @RequestParam("diaryID") int diaryID,
+            Model model){
+
+        Integer adminID = SignAndLoginController.USERSID;
+        if(adminID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Boolean flag = diaryService.deleteDiary(diaryID);
+        if(!flag){
+            return "adminPage-deleteDiaryFailure";
+        }
+
+        return "redirect:/adminFunction/manageTraineeDiary";
     }
 }
