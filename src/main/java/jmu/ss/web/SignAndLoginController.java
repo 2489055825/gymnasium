@@ -27,7 +27,7 @@ public class SignAndLoginController {
                        @RequestParam("identity") String identity,
                        Model model) {
 
-        if(name==null||account==null||password==null||identity==null){
+        if(name.isEmpty()||account.isEmpty()||password.isEmpty()||identity.isEmpty()){
             return "signPage";
         }
         Users users = new Users();
@@ -40,9 +40,13 @@ public class SignAndLoginController {
             if(flag == true){
                 model.addAttribute("userName",name);
                 model.addAttribute("errorMessage",null);
+            }else {
+                model.addAttribute("errorMessage", "注册失败，请重试");
             }
         } catch (DuplicateKeyException e) {
             model.addAttribute("errorMessage", "该账号已经存在，请选择其他账号");
+        } catch (Exception e) {
+            model.addAttribute("errorMessage","注册失败，请重试");
         }
         return "signResult";
     }
@@ -54,9 +58,10 @@ public class SignAndLoginController {
             Model model) {
 
         String path = null;
-        if(account == null || password == null){
+        if(account.isEmpty() || password.isEmpty()){
             return "loginPage";
         }
+        try{
         Users users = signAndLoginService.login(account, password);
         if(users == null){
             path = "loginResult";
@@ -69,6 +74,9 @@ public class SignAndLoginController {
             } else if (users.getIdentity().equals("trainee")) {
                 path = "redirect:/traineeFunction/personInformation";
             }
+        }
+        }catch (Exception e){
+            path = "loginResult";
         }
         return path;
     }

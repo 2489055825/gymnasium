@@ -9,31 +9,76 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>教练信息修改界面</title>
+  <script type="text/javascript" src="/gymnasium/bootstrap/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/gymnasium/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="/gymnasium/bootstrap/css/bootstrap.css" />
+  <meta charset="utf-8">
+  <title>教练信息修改界面</title>
 </head>
-<body>
+<body class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">健身房管理系统</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
 
-<form id="coachForm" action="coachFunction/updateCoach" method="post">
-  <input type="hidden" name="traineeID" value="${coachID}" />
+  </div><!-- /.container-fluid -->
 
-  <label for="name">名字:</label>
-  <input type="text" id="name" name="name" value="${name}" />
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="#">教练信息</a></li>
+    <li><a href="#">我的健身课程</a></li>
+    <li><a href="#">察看学员健身日记</a></li>
+  </ul>
 
-  <label for="sex">性别:</label>
-  <select id="sex" name="sex">
-    <option value="男" ${sex == '男' ? 'selected' : ''}>男</option>
-    <option value="女" ${sex == '女' ? 'selected' : ''}>女</option>
-  </select>
+</nav>
+<div class="row">
+  <div class="col-md-3"></div>
 
-  <label for="age">年龄:</label>
-  <input type="number" id="age" name="age" value="${age}" />
+  <div class="col-md-5">
+    <legend class="text-center">教练信息修改</legend>
+    <form class="form-horizontal" action="coachFunction/updateCoach" method="post">
 
-  <label for="personIntroduction">个人介绍:</label>
-  <input type="text" id="personIntroduction" name="personIntroduction" value="${personIntroduction}" />
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">姓名</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" name="name" placeholder="null">
+        </div>
+      </div>
 
-  <button type="submit">更新</button>
-</form>
+      <div class="form-group">
+        <label for="sex" class="col-sm-3 control-label">性别</label>
+        <div class="col-sm-9">
+          <select id="sex" name="sex" class="form-control" style="width:535px; ">
+            <option value="男">男</option>
+            <option value="女">女</option>
+          </select>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label for="age" class="col-sm-3 control-label">年龄</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="age" name="age" placeholder="null">
+        </div>
+      </div>
 
+      <div class="form-group" style="margin-left: 60px;">
+        <label for="personIntroduction">个人介绍</label>
+        <textarea class="form-control" rows="3" id="personIntroduction"></textarea>
+      </div>
+
+      <br/>
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-5" >
+          <button type="submit" class="btn btn-primary">确认修改</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="col-md-3"></div>
+</div>
 </body>
 </html>

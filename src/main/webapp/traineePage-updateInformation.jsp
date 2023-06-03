@@ -9,40 +9,92 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>学员信息更新界面</title>
+  <script type="text/javascript" src="/gymnasium/bootstrap/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/gymnasium/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="/gymnasium/bootstrap/css/bootstrap.css" />
+  <meta charset="utf-8">
+  <title>学员信息更新界面</title>
 </head>
-<body>
+<body class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">健身房管理系统</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
 
-<form id="traineeForm" action="traineeFunction/updateTrainee" method="post">
-  <input type="hidden" name="traineeID" value="${traineeID}" />
+  </div><!-- /.container-fluid -->
 
-  <label for="name">名字:</label>
-  <input type="text" id="name" name="name" value="${name}" />
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="personInformation">学员信息</a></li>
+    <li><a href="myDiary">健身日记</a></li>
+    <li><a href="myComments">我的点评</a></li>
+    <li><a href="myOrders">我的订单</a></li>
+    <li><a href="courseBooking">课程预订</a></li>
+  </ul>
 
-  <label for="sex">性别:</label>
-  <select id="sex" name="sex">
-    <option value="男" ${sex == '男' ? 'selected' : ''}>男</option>
-    <option value="女" ${sex == '女' ? 'selected' : ''}>女</option>
-  </select>
+</nav>
+<div class="row">
+  <div class="col-md-3"></div>
 
-  <label for="age">年龄:</label>
-  <input type="number" id="age" name="age" value="${age}" />
+  <div class="col-md-5">
+    <legend class="text-center">学员信息修改</legend>
+    <form class="form-horizontal" action="traineeFunction/updateTrainee" method="post">
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">姓名</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" name="name" placeholder="待填写">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="sex" class="col-sm-3 control-label">性别</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="sex" name="sex" placeholder="待填写">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="age" class="col-sm-3 control-label">年龄</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="age" name="age" placeholder="待填写">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="weight" class="col-sm-3 control-label">体重</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="weight" name="weight" placeholder="待填写">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="height" class="col-sm-3 control-label">身高</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="height" name="height" placeholder="待填写">
+        </div>
+      </div>
 
-  <label for="weight">体重:</label>
-  <input type="number" id="weight" name="weight" value="${weight}" />
+      <div class="form-group">
+        <label for="purpose" class="col-sm-3 control-label">健身目的</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="purpose" name="purpose" placeholder="待填写">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personIntroduction" class="col-sm-3 control-label">个人简介</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="personIntroduction" name="personIntroduction" placeholder="待填写">
+        </div>
+      </div>
 
-  <label for="height">身高:</label>
-  <input type="number" id="height" name="height" value="${height}" />
+      <br/>
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-5" >
+          <button type="submit" class="btn btn-primary">确认修改</button>
+        </div>
+      </div>
+    </form>
 
-  <label for="purpose">健身目的:</label>
-  <input type="text" id="purpose" name="purpose" value="${purpose}" />
-
-  <label for="purpose">个人介绍:</label>
-  <input type="text" id="personIntroduction" name="personIntroduction" value="${personIntroduction}" />
-
-  <button type="submit">更新</button>
-</form>
-
-
+  </div>
+  <div class="col-md-3"></div>
+</div>
 </body>
 </html>

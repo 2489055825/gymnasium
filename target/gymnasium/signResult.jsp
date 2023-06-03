@@ -9,18 +9,35 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <script type="text/javascript" src="/gymnasium/bootstrap/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="/gymnasium/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/gymnasium/bootstrap/css/bootstrap.css" />
+    <meta charset="utf-8">
     <title>注册结果页面</title>
 </head>
 <body>
-<%
-    request.setCharacterEncoding("utf-8");
-%>
-    <h1>注册成功</h1>
-    <h1>欢迎，${userName}！</h1>
-    <h1>两秒后自动跳转到登录页面,登录页面还没写</h1>
+
+<c:if test="${empty errorMessage}">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <legend class="text-center">注册成功，欢迎${userName}！<br/> 2秒后自动跳转到登录页面</legend>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <meta http-equiv="refresh" content="2;url=/gymnasium/loginPage.jsp">
+</c:if>
 
 <c:if test="${not empty errorMessage}">
-    <p>${errorMessage}</p>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <legend class="text-center">注册失败，${errorMessage}<br> 2秒后自动跳转到登录页面！</legend>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <meta http-equiv="refresh" content="2;url=/gymnasium/loginPage.jsp">
 </c:if>
 
 </body>

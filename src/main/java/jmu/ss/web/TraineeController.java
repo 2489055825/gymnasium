@@ -38,7 +38,7 @@ public class TraineeController {
         return "traineePage-home";
     }
 
-    @RequestMapping(value = "/updateCoach", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateTrainee", method = RequestMethod.POST)
     public String updateTrainee(
             @RequestParam("name") String name,
             @RequestParam("sex") String sex,
