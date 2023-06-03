@@ -30,5 +30,7 @@ public interface CourseService {
 
     public boolean insertCourse(Course course);
 
+    public boolean deleteCourse(int courseID);
+
 
 }

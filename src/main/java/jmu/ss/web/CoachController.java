@@ -107,4 +107,22 @@ public class CoachController {
         model.addAttribute("diaryList", diaryList);
         return "coachPage-myTraineeDiary";
     }
+
+    @RequestMapping(value = "/deleteCourse", method = RequestMethod.GET)
+    public String deleteCourse(
+            @RequestParam("courseID") int courseID,
+            Model model){
+
+        Integer coachID = SignAndLoginController.USERSID;
+        if(coachID == 0){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Boolean flag = courseService.deleteCourse(courseID);
+        if(!flag){
+            return "traineePage-deleteCourseFailure";
+        }
+
+        return "redirect:/coachFunction/myCourse";
+    }
 }

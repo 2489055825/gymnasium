@@ -54,5 +54,11 @@ public class CourseServiceImpl implements CourseService {
         return flag;
     }
 
+    @Override
+    public boolean deleteCourse(int courseID) {
+        boolean flag = courseDAO.delete(courseID);
+        return flag;
+    }
+
 
 }

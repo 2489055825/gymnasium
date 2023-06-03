@@ -2,6 +2,7 @@ package jmu.ss.dao;
 
 import jmu.ss.entity.Course;
 import jmu.ss.entity.Trainee;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -35,6 +36,10 @@ public interface CourseDAO {
             "VALUES (#{courseName}, #{coachID}, #{courseHour}, #{purpose}, #{courseIntroduction})")
     public boolean insert(Course course);
 
+    @Delete("DELETE\n" +
+            "FROM course\n" +
+            "WHERE courseID = #{courseID}")
+    public boolean delete(int courseID);
 
     // 根据课程ID查询所有的学员,返回列表(连接)
     @Select("select * from trainee " +
