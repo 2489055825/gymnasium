@@ -120,7 +120,7 @@ public class CoachController {
 
         Boolean flag = courseService.deleteCourse(courseID);
         if(!flag){
-            return "traineePage-deleteCourseFailure";
+            return "coachPage-deleteCourseFailure";
         }
 
         return "redirect:/coachFunction/myCourse";
