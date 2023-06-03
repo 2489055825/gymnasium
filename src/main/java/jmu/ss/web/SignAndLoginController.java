@@ -63,7 +63,7 @@ public class SignAndLoginController {
         }else{
             this.USERSID = users.getUserID();
             if(users.getIdentity().equals("admin")){
-                path = "redirect:/adminPage-home.jsp";
+                path = "redirect:/adminFunction/allTrainee";
             } else if (users.getIdentity().equals("coach")) {
                 path = "redirect:/coachFunction/personInformation";
             } else if (users.getIdentity().equals("trainee")) {

@@ -2,6 +2,7 @@ package jmu.ss.service.impl;
 
 import jmu.ss.dao.DiaryDAO;
 import jmu.ss.dao.TraineeDAO;
+import jmu.ss.dao.UsersDAO;
 import jmu.ss.entity.Diary;
 import jmu.ss.entity.Trainee;
 import jmu.ss.service.TraineeService;
@@ -16,6 +17,8 @@ public class TraineeServiceImpl implements TraineeService {
     private TraineeDAO traineeDAO;
     @Autowired
     private DiaryDAO diaryDAO;
+    @Autowired
+    private UsersDAO usersDAO;
 
 
     @Override
@@ -34,6 +37,18 @@ public class TraineeServiceImpl implements TraineeService {
     public List<Diary> getDiaryByTraineeID(int traineeID){
         List<Diary> diaryList = diaryDAO.queryAll(traineeID);
         return diaryList;
+    }
+
+    @Override
+    public List<Trainee> getAllTrainees() {
+        List<Trainee> traineeList = traineeDAO.queryAll();
+        return traineeList;
+    }
+
+    @Override
+    public boolean deleteById(int traineeID) {
+        boolean flag = usersDAO.delete(traineeID);
+        return flag;
     }
 
 

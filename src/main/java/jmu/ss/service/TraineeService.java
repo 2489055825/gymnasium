@@ -31,6 +31,8 @@ public interface TraineeService {
      */
     public List<Diary> getDiaryByTraineeID(int traineeID);
 
+    public List<Trainee> getAllTrainees();
 
+    public boolean deleteById(int traineeID);
 
 }

@@ -9,9 +9,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>管理员首页</title>
+    <title>管理员首页--会员管理</title>
 </head>
 <body>
-这是管理员首页
+这是管理员首页,显示所有的注册会员
+<c:forEach var="trainee" items="${traineeList}">
+    <!-- 在这里使用diary对象的属性进行展示 -->
+    <h6>${trainee.toString()}</h6>
+</c:forEach>
+
+<a href="deleteTrainee?traineeID=13"><button>删除traineeID=13的会员</button></a>
+
 </body>
 </html>
