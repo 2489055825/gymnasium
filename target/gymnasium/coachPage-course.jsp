@@ -16,6 +16,8 @@
   <!-- 在这里使用diary对象的属性进行展示 -->
   <h6>${course.toString()}</h6>
 </c:forEach>
+
+<a href="deleteCourse?courseID=1"><button>删除courseID=1的课程</button></a>
 <a href="<c:url value="/coachPage-insertCourse.jsp"/>"><button>访问新增健身课程界面</button></a>
 </body>
 </html>
