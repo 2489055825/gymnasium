@@ -27,10 +27,10 @@
     </div><!-- /.container-fluid -->
 
     <ul class="nav nav-pills nav-justified">
-        <li ><a href="adminPage-home.jsp">会员管理</a></li>
-        <li><a href="adminPage-manageCoach.jsp">员工管理</a></li>
-        <li><a href="adminPage-manageOrders.jsp">订单管理</a></li>
-        <li class="active"><a href="adminPage-manageTraineeDiary.jsp">日记管理</a></li>
+        <li><a href="allTrainee">会员管理</a></li>
+        <li><a href="manageCoach">员工管理</a></li>
+        <li><a href="manageOrders">订单管理</a></li>
+        <li class="active"><a href="manageTraineeDiary">日记管理</a></li>
     </ul>
 
 </nav>

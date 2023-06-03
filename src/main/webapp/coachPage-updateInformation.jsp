@@ -27,9 +27,9 @@
   </div><!-- /.container-fluid -->
 
   <ul class="nav nav-pills nav-justified">
-    <li class="active"><a href="#">教练信息</a></li>
-    <li><a href="#">我的健身课程</a></li>
-    <li><a href="#">察看学员健身日记</a></li>
+    <li class="active"><a href="personInformation">教练信息</a></li>
+    <li><a href="myCourse">我的健身课程</a></li>
+    <li ><a href="myTraineeDiary">察看学员健身日记</a></li>
   </ul>
 
 </nav>
@@ -43,14 +43,14 @@
       <div class="form-group">
         <label for="name" class="col-sm-3 control-label">姓名</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="name" name="name" placeholder="null">
+          <input type="text" class="form-control" id="name" name="name" placeholder="待填写">
         </div>
       </div>
 
       <div class="form-group">
         <label for="sex" class="col-sm-3 control-label">性别</label>
         <div class="col-sm-9">
-          <select id="sex" name="sex" class="form-control" style="width:535px; ">
+          <select id="sex" name="sex" class="form-control" style="width:345px; ">
             <option value="男">男</option>
             <option value="女">女</option>
           </select>
@@ -60,13 +60,13 @@
       <div class="form-group">
         <label for="age" class="col-sm-3 control-label">年龄</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="age" name="age" placeholder="null">
+          <input type="number" class="form-control" id="age" name="age" placeholder="待填写">
         </div>
       </div>
 
       <div class="form-group" style="margin-left: 60px;">
         <label for="personIntroduction">个人介绍</label>
-        <textarea class="form-control" rows="3" id="personIntroduction"></textarea>
+        <input type="text" class="form-control" id="personIntroduction" name="personIntroduction" placeholder="待填写">
       </div>
 
       <br/>

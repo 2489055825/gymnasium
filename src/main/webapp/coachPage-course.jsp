@@ -27,9 +27,9 @@
     </div><!-- /.container-fluid -->
 
     <ul class="nav nav-pills nav-justified">
-        <li><a href="coachPage-home.jsp">教练信息</a></li>
-        <li class="active"><a href="coachPage-course.jsp">我的健身课程</a></li>
-        <li><a href="coachPage-myTraineeDiary.jsp">察看学员健身日记</a></li>
+        <li ><a href="personInformation">教练信息</a></li>
+        <li class="active"><a href="myCourse">我的健身课程</a></li>
+        <li ><a href="myTraineeDiary">察看学员健身日记</a></li>
     </ul>
 
 </nav>

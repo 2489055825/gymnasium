@@ -34,11 +34,12 @@
         <form class="form-horizontal" style="margin-left: 50px;" action="insertDiary" method="POST">
         <!--        主体内容-->
             <div class="form-group">
-                <label for="sex" class="col-sm-3 control-label">身份</label>
+                <label for="selectedCourse" class="col-sm-3 control-label">选择课程</label>
                 <div class="col-sm-9">
-                    <select id="sex" name="sex" class="form-control" style="width:535px; ">
-                        <option value="男">男</option>
-                        <option value="女">女</option>
+                    <select id="selectedCourse" name="selectedCourse" class="form-control" style="width:535px; ">
+                        <c:forEach var="course" items="${courseList}">
+                        <option value="${course.courseID}">${course.courseName}</option>
+                        </c:forEach>
                     </select>
                 </div>
             </div>

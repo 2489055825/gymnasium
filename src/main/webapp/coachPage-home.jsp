@@ -44,20 +44,20 @@
             <div class="form-group">
                 <label class="col-sm-3 control-label">性别</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="${coach.sex} placeholder="待填写" readonly>
+                    <input type="text" class="form-control" value="${coach.sex}" placeholder="待填写" readonly>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label">年龄</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="${coach.age} placeholder="待填写" readonly>
+                    <input type="text" class="form-control" value="${coach.age}" placeholder="待填写" readonly>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-3 control-label">个人简介</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="${coach.personIntroduction} placeholder="null" readonly>
+                    <input type="text" class="form-control" value="${coach.personIntroduction}" placeholder="null" readonly>
                 </div>
             </div>
 

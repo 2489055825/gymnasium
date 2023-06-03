@@ -27,7 +27,7 @@
     </div><!-- /.container-fluid -->
 
     <ul class="nav nav-pills nav-justified">
-        <li class="active"><a href="personInformation">学员信息</a></li>
+        <li><a href="personInformation">学员信息</a></li>
         <li class="active"><a href="myDiary">健身日记</a></li>
         <li><a href="myComments">我的点评</a></li>
         <li><a href="myOrders">我的订单</a></li>
@@ -51,12 +51,12 @@
                 <td>${diary.diaryDate}</td>
                 <td>${diary.diaryDetail}</td>
                 <td>
-                    <a href="#">
+                    <a href="updateDiary?diaryID=${diary.diaryID}">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
                     </a>
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="deleteDiary?diaryID=${diary.diaryID}">
                     <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>删除
                     </a>
                 </td>

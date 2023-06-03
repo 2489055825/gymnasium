@@ -27,11 +27,11 @@
     </div><!-- /.container-fluid -->
 
     <ul class="nav nav-pills nav-justified">
-        <li><a href="traineePage-home.jsp">学员信息</a></li>
-        <li><a href="traineePage-myDiary.jsp">健身日记</a></li>
-        <li><a href="traineePage-comments.jsp">我的点评</a></li>
-        <li><a href="traineePage-myOrders.jsp">我的订单</a></li>
-        <li class="active"><a href="trainPage-courseBooking.jsp">课程预定</a></li>
+        <li><a href="personInformation">学员信息</a></li>
+        <li><a href="myDiary">健身日记</a></li>
+        <li ><a href="myComments">我的点评</a></li>
+        <li><a href="myOrders">我的订单</a></li>
+        <li class="active"><a href="courseBooking">课程预订</a></li>
     </ul>
 
 </nav>
