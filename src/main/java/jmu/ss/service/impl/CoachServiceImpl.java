@@ -30,4 +30,10 @@ public class CoachServiceImpl implements CoachService {
         boolean flag = coachDAO.update(coach);
         return flag;
     }
+
+    @Override
+    public boolean deleteByCoachID(int coachID) {
+        boolean flag = coachDAO.delete(coachID);
+        return flag;
+    }
 }

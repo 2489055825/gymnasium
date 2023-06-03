@@ -20,5 +20,9 @@
 
 <a href="deleteTrainee?traineeID=13"><button>删除traineeID=13的会员</button></a>
 
+
+<a href="manageCoach"><button>员工管理</button></a>
+<a href="manageOrders"><button>订单管理</button></a>
+<a href="manageTraineeDiary"><button>日记管理</button></a>
 </body>
 </html>

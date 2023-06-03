@@ -1,5 +1,6 @@
 package jmu.ss.web;
 
+import jmu.ss.entity.Coach;
 import jmu.ss.entity.Trainee;
 import jmu.ss.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,34 @@ public class AdminController {
         }
 
         return "redirect:/adminFunction/allTrainee";
+    }
+
+    @RequestMapping(value = "/manageCoach", method = RequestMethod.GET)
+    public String manageCoach(Model model){
+        Integer adminID = SignAndLoginController.USERSID;
+        if(adminID == null){
+            return "redirect:/loginPage.jsp";
+        }
+        List<Coach> coachList = coachService.getAllCoach();
+        model.addAttribute("coachList", coachList); //使用重定向后model传不过去
+        return "adminPage-manageCoach";
+    }
+
+    @RequestMapping(value = "/deleteCoach", method = RequestMethod.GET)
+    public String deleteCoach(
+            @RequestParam("coachID") int coachID,
+            Model model){
+
+        Integer adminID = SignAndLoginController.USERSID;
+        if(adminID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Boolean flag = coachService.deleteByCoachID(coachID);
+        if(!flag){
+            return "adminPage-deleteCoachFailure";
+        }
+
+        return "redirect:/adminFunction/manageCoach";
     }
 }

@@ -16,4 +16,5 @@ public interface CoachService {
     public Coach getCoachByCoachID(int coachID);
 
     public boolean updateCoach(Coach coach);
+    public boolean deleteByCoachID(int coachID);
 }
