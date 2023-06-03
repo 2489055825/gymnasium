@@ -1,6 +1,7 @@
 package jmu.ss.web;
 
 import jmu.ss.entity.Coach;
+import jmu.ss.entity.Orders;
 import jmu.ss.entity.Trainee;
 import jmu.ss.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/deleteTrainee", method = RequestMethod.GET)
-    public String deleteOrders(
+    public String deleteTrainee(
             @RequestParam("traineeID") int traineeID,
             Model model){
 
@@ -82,5 +83,34 @@ public class AdminController {
         }
 
         return "redirect:/adminFunction/manageCoach";
+    }
+
+    @RequestMapping(value = "/manageOrders", method = RequestMethod.GET)
+    public String manageOrders(Model model){
+        Integer adminID = SignAndLoginController.USERSID;
+        if(adminID == null){
+            return "redirect:/loginPage.jsp";
+        }
+        List<Orders> ordersList = ordersService.getAllOrders();
+        model.addAttribute("ordersList", ordersList); //使用重定向后model传不过去
+        return "adminPage-manageOrders";
+    }
+
+    @RequestMapping(value = "/deleteOrders", method = RequestMethod.GET)
+    public String deleteOrders(
+            @RequestParam("ordersID") int ordersID,
+            Model model){
+
+        Integer adminID = SignAndLoginController.USERSID;
+        if(adminID == null){
+            return "redirect:/loginPage.jsp";
+        }
+
+        Boolean flag = ordersService.deleteOrders(ordersID);
+        if(!flag){
+            return "adminPage-deleteOrdersFailure";
+        }
+
+        return "redirect:/adminFunction/manageOrders";
     }
 }
