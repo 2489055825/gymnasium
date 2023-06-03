@@ -2,6 +2,7 @@ package jmu.ss.web;
 
 import jmu.ss.entity.Coach;
 import jmu.ss.entity.Course;
+import jmu.ss.entity.Diary;
 import jmu.ss.entity.Trainee;
 import jmu.ss.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,5 +94,17 @@ public class CoachController {
             return "coachPage-insertCourseFailure"; //转到失败页面
         }
         return "redirect:/coachFunction/myCourse"; //转到个人信息页面(重新查询)
+    }
+
+
+    @RequestMapping(value = "/myTraineeDiary", method = RequestMethod.GET)
+    public String myTraineeDiary(Model model){
+        Integer coachID = SignAndLoginController.USERSID;
+        if(coachID == null){
+            return "redirect:/loginPage.jsp";
+        }
+        List<Diary> diaryList = diaryService.getDiaryByCoachID(coachID);
+        model.addAttribute("diaryList", diaryList);
+        return "coachPage-myTraineeDiary";
     }
 }
