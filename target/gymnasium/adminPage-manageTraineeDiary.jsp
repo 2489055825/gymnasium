@@ -27,10 +27,10 @@
     </div><!-- /.container-fluid -->
 
     <ul class="nav nav-pills nav-justified">
-        <li ><a href="adminPage-home.jsp">会员管理</a></li>
-        <li><a href="adminPage-manageCoach.jsp">员工管理</a></li>
-        <li><a href="adminPage-manageOrders.jsp">订单管理</a></li>
-        <li class="active"><a href="adminPage-manageTraineeDiary.jsp">日记管理</a></li>
+        <li><a href="allTrainee">会员管理</a></li>
+        <li><a href="manageCoach">员工管理</a></li>
+        <li><a href="manageOrders">订单管理</a></li>
+        <li class="active"><a href="manageTraineeDiary">日记管理</a></li>
     </ul>
 
 </nav>
@@ -40,10 +40,11 @@
         <legend class="text-center">会员日记</legend>
 
         <table class="table table-bordered table-striped">
-            <tr><th>日记ID</th><th>课程ID</th><th>写作日期</th><th>日记内容</th><th>删除</th></tr>
+            <tr><th>日记ID</th><th>学员ID</th><th>课程ID</th><th>写作日期</th><th>日记内容</th><th>删除</th></tr>
             <c:forEach var="diary" items="${diaryList}">
             <tr>
                 <td>${diary.diaryID}</td>
+                <td>${diary.traineeID}</td>
                 <td>${diary.courseID}</td>
                 <td>${diary.diaryDate}</td>
                 <td>${diary.diaryDetail}</td>

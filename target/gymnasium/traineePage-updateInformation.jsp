@@ -60,13 +60,13 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="weight" class="col-sm-3 control-label">体重</label>
+        <label for="weight" class="col-sm-3 control-label">体重(kg)</label>
         <div class="col-sm-9">
           <input type="text" class="form-control" id="weight" name="weight" placeholder="待填写">
         </div>
       </div>
       <div class="form-group">
-        <label for="height" class="col-sm-3 control-label">身高</label>
+        <label for="height" class="col-sm-3 control-label">身高(cm)</label>
         <div class="col-sm-9">
           <input type="text" class="form-control" id="height" name="height" placeholder="待填写">
         </div>

@@ -30,7 +30,7 @@ public class TraineeController {
     @RequestMapping(value = "/personInformation", method = RequestMethod.GET)
     public String personInformation(Model model){
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
         Trainee trainee = traineeService.getTraineeByID(traineeID);
@@ -50,6 +50,10 @@ public class TraineeController {
             Model model){
             double BMI = weight / (height * height); //计算BMI
 
+        Integer traineeID = SignAndLoginController.USERSID;
+        if(traineeID == 0){
+            return "redirect:/loginPage.jsp";
+        }
         //组装学员对象
         Trainee trainee = new Trainee();
         trainee.setTraineeID(SignAndLoginController.USERSID);
@@ -72,7 +76,7 @@ public class TraineeController {
     @RequestMapping(value = "/myDiary", method = RequestMethod.GET)
     public String myDiary(Model model){
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Diary> diaryList = traineeService.getDiaryByTraineeID(traineeID);
@@ -85,7 +89,7 @@ public class TraineeController {
     @RequestMapping(value = "/insertDiaryPage", method = RequestMethod.GET)
     public String insertDiaryPage(Model model){
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
         //List<Coach> coachList = coachService.getAllCoach();
@@ -103,7 +107,7 @@ public class TraineeController {
 
         //@RequestParam("coach") int coachID,
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -136,7 +140,7 @@ public class TraineeController {
 
         //@RequestParam("coach") int coachID,
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -154,7 +158,7 @@ public class TraineeController {
 
         //@RequestParam("coach") int coachID,
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -173,7 +177,7 @@ public class TraineeController {
 
         //@RequestParam("coach") int coachID,
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -193,7 +197,7 @@ public class TraineeController {
     public String courseBooking(Model model){
 
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -209,7 +213,7 @@ public class TraineeController {
             Model model){
 
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -231,8 +235,8 @@ public class TraineeController {
     @RequestMapping(value = "/myOrders", method = RequestMethod.GET)
     public String myOrders(Model model){
 
-        Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        int traineeID = SignAndLoginController.USERSID;
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -248,7 +252,7 @@ public class TraineeController {
             Model model){
 
         Integer traineeID = SignAndLoginController.USERSID;
-        if(traineeID == null){
+        if(traineeID == 0){
             return "redirect:/loginPage.jsp";
         }
 

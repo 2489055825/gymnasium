@@ -42,9 +42,8 @@
             <c:forEach var="course" items="${courseList}">
             <tr>
                 <td>${course.courseID}</td>
-                <td>${course.courseID}</td>
+                <td>${course.courseName}</td>
                 <td>${course.courseHour}</td>
-                <td>${course.purpose}</td>
                 <td>${course.purpose}</td>
                 <td>${course.courseIntroduction}</td>
                 <%--                --%>

@@ -44,7 +44,7 @@
 
         <table class="table table-bordered table-striped">
             <tr><th>订单ID</th><th>教练名</th><th>课程名</th><th>订单评级</th><th>订单详情</th><th>添加订单评价</th>
-                <th>修改</th><th>删除</th></tr>
+                <th>修改</th></tr>
             <c:forEach var="orders" items="${ordersList}">
             <tr>
                 <td>${orders.orderID}</td>
@@ -59,13 +59,10 @@
                 </td>
 
                 <td>
-                    <a href="#">
+                    <a href="/gymnasium/traineePage-insertOrdersComments.jsp?orderID=${orders.orderID}">
                     <span aria-hidden="true"></span>修改
                     </a>
                 </td>
-                <td><a href="#">
-                    <span aria-hidden="true"></span>
-                    删除</a></td>
             </tr>
             </c:forEach>
         </table>

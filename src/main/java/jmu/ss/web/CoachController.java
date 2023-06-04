@@ -31,7 +31,7 @@ public class CoachController {
     @RequestMapping(value = "/personInformation", method = RequestMethod.GET)
     public String personInformation(Model model){
         Integer coachID = SignAndLoginController.USERSID;
-        if(coachID == null){
+        if(coachID == 0){
             return "redirect:/loginPage.jsp";
         }
         Coach coach = coachService.getCoachByCoachID(coachID);
@@ -65,7 +65,7 @@ public class CoachController {
     @RequestMapping(value = "/myCourse", method = RequestMethod.GET)
     public String myCourse(Model model){
         Integer coachID = SignAndLoginController.USERSID;
-        if(coachID == null){
+        if(coachID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Course> courseList = courseService.getCourseByCoachID(coachID);
@@ -100,7 +100,7 @@ public class CoachController {
     @RequestMapping(value = "/myTraineeDiary", method = RequestMethod.GET)
     public String myTraineeDiary(Model model){
         Integer coachID = SignAndLoginController.USERSID;
-        if(coachID == null){
+        if(coachID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Diary> diaryList = diaryService.getDiaryByCoachID(coachID);

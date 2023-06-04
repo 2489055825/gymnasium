@@ -31,7 +31,7 @@ public class AdminController {
     @RequestMapping(value = "/allTrainee", method = RequestMethod.GET)
     public String personInformation(Model model){
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Trainee> traineeList = traineeService.getAllTrainees();
@@ -45,7 +45,7 @@ public class AdminController {
             Model model){
 
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -60,7 +60,7 @@ public class AdminController {
     @RequestMapping(value = "/manageCoach", method = RequestMethod.GET)
     public String manageCoach(Model model){
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Coach> coachList = coachService.getAllCoach();
@@ -74,7 +74,7 @@ public class AdminController {
             Model model){
 
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -89,7 +89,7 @@ public class AdminController {
     @RequestMapping(value = "/manageOrders", method = RequestMethod.GET)
     public String manageOrders(Model model){
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Orders> ordersList = ordersService.getAllOrders();
@@ -103,7 +103,7 @@ public class AdminController {
             Model model){
 
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
 
@@ -118,7 +118,7 @@ public class AdminController {
     @RequestMapping(value = "/manageTraineeDiary", method = RequestMethod.GET)
     public String manageTraineeDiary(Model model){
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
         List<Diary> diaryList = diaryService.getAllDiary();
@@ -132,7 +132,7 @@ public class AdminController {
             Model model){
 
         Integer adminID = SignAndLoginController.USERSID;
-        if(adminID == null){
+        if(adminID == 0){
             return "redirect:/loginPage.jsp";
         }
 
