@@ -42,7 +42,7 @@
         <legend class="text-center">我的健身日记</legend>
 
         <table class="table table-bordered table-striped">
-            <tr><th>日记ID</th><th>课程ID</th><th>写作日期</th><th>日记详情</th><th>修改</th><th>删除</th></tr>
+            <tr><th>日记ID</th><th>课程ID</th><th>写作日期</th><th>日记详情</th><th>删除</th></tr>
             <c:forEach var="diary" items="${diaryList}">
             <tr>
                 <td>${diary.diaryID}</td>
@@ -50,11 +50,6 @@
                 <td>${diary.courseID}</td>
                 <td>${diary.diaryDate}</td>
                 <td>${diary.diaryDetail}</td>
-                <td>
-                    <a href="updateDiary?diaryID=${diary.diaryID}">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
-                    </a>
-                </td>
                 <td>
                     <a href="deleteDiary?diaryID=${diary.diaryID}">
                     <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>删除

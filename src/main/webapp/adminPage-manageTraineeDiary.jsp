@@ -40,10 +40,11 @@
         <legend class="text-center">会员日记</legend>
 
         <table class="table table-bordered table-striped">
-            <tr><th>日记ID</th><th>课程ID</th><th>写作日期</th><th>日记内容</th><th>删除</th></tr>
+            <tr><th>日记ID</th><th>学员ID</th><th>课程ID</th><th>写作日期</th><th>日记内容</th><th>删除</th></tr>
             <c:forEach var="diary" items="${diaryList}">
             <tr>
                 <td>${diary.diaryID}</td>
+                <td>${diary.traineeID}</td>
                 <td>${diary.courseID}</td>
                 <td>${diary.diaryDate}</td>
                 <td>${diary.diaryDetail}</td>
